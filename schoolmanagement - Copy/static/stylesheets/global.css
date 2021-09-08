@@ -1,0 +1,13 @@
+nav a.btn{
+    background-color: red;
+    margin-left: 70px;
+    color: aliceblue;
+    font-size:large;
+    border-radius: 25px;
+
+}
+
+nav a.btn:hover{
+    background-color: aliceblue;
+    color: red;
+}

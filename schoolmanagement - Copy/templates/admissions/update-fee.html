@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html>
+
+<head>
+    <h1>
+        <title> Update Fee page </title>
+
+</head>
+
+<body>
+    {% load crispy_forms_tags %}
+    {% block content %}
+
+    <div class="row">
+        <div class="col-4">
+
+        </div>
+        <div class="col-lg-4">
+            <div class="admission-form">
+                <form class="text-light" method="POST">
+
+                    {{form|crispy}}
+
+                    <input class="btn btn-block btn-danger btn-lg" type="submit" name="" value="Add details">
+
+                    {% csrf_token %}
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    {% endblock content %}
+</body>
+
+</html>

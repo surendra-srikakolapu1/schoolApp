@@ -1,0 +1,69 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<body>
+
+    {% block content %}
+    <center>
+        <h2 class="heading">Register</h2>
+    </center>
+
+    <form class="form-container-register p-2 mt-4" action="register" method="POST">
+
+
+        <div class="form-row">
+
+
+            <div class="row justify-content-center input-form">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-xs-12 col-lg-12">
+                    <input type="text" name="username" placeholder="Enter Username" class="form-control" required><br>
+                </div>
+
+                <div class="col-12">
+                    <input type="email" name="email" placeholder="Enter Email" class="form-control" required><br>
+                </div>
+
+                <div class="col-12">
+                    <input type="password" name="password1" placeholder="Enter Password" class="form-control" required><br>
+                </div>
+
+
+                <div class="col-12">
+                    <input type="password" name="password2" placeholder="Re-Enter Password" class="form-control" required><br>
+                </div>
+
+                {% if messages %}
+                {% for message in messages %}
+
+                <center class="p-2 text-danger">{{message}}</center>
+
+                {% endfor %}
+                {% endif %}
+
+                <div class="col-6">
+                    <input style="font-weight:5px;" class="btn btn-block btn-danger btn-md mb-4" type="submit">
+                </div>
+                <div class="col-6">
+                    <a href="/" style="width:100%;" class="btn btn-success btn-md mb-4"><strong>Login</strong></a>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        {% csrf_token %}
+    </form>
+
+
+
+
+    {% endblock content %}
+
+</body>
+
+</html>

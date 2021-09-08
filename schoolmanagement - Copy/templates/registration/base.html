@@ -1,0 +1,178 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Base</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <style media="screen">
+        .form-container {
+            position: relative;
+            top: 20%;
+            box-sizing: border-box;
+            border-radius: 20px;
+        }
+
+        .form-container-register {
+            position: relative;
+            top: 5%;
+            padding: 30px;
+            box-sizing: border-box;
+            border-radius: 20px;
+
+        }
+
+        .row-bottom {
+            margin-bottom: 1%;
+            padding-bottom: 1%;
+        }
+
+        h2 {
+            text-align: center;
+            font-style: oblique;
+            font-family: serif;
+            font-weight: bolder;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            font-weight: bold;
+            text-align: center;
+            border-radius: 15px;
+            background-color: rgb(255, 255, 255);
+            border: none;
+            border: 1px solid grey;
+            border-radius: 10px;
+            transition: 0.2s;
+            box-shadow: 1px 1px 3px 1px black,
+                -1px -1px 3px 1px black;
+
+        }
+
+        .btn {
+            width: 60%;
+            border-radius: 10px;
+        }
+
+        .alert {
+            border-radius: 20px;
+        }
+
+        .img-resp {
+            background-image: url('/static/images/accounts.png');
+            background-size: 100% 100%;
+            top: 100px;
+            position: relative;
+        }
+
+        @media(min-width:469px) {
+
+            body {
+                background-color: black;
+            }
+
+            .img-resp {
+                background-image: url('/static/images/accounts.png');
+                background-size: 100% 100%;
+                top: 100px;
+                position: relative;
+
+
+            }
+
+            .input-form {
+                width: 73%;
+                margin: 0% 13%;
+            }
+
+        }
+
+        @media(max-width:468px) {
+
+            h2.heading {
+                color: white;
+                font-size: 60px;
+            }
+
+            .input-form {
+                width: 120%;
+                margin-right: 10px;
+                right: 70px;
+
+                position: relative;
+
+            }
+
+            .img-resp {
+                background-image: none;
+                background-size: 100% 100%;
+                top: 100px;
+                position: relative;
+
+            }
+
+            body {
+
+                background: linear-gradient(150deg, rgba(142, 45, 226, 1) 35%, rgba(74, 0, 224, 1) 100%);
+
+                background-repeat: repeat-x;
+                min-height: 110vh;
+
+                background-position: center;
+            }
+
+            .form-row {
+                width: 300%;
+
+                margin-right: 50px;
+            }
+
+            .logini {
+                padding: 10px;
+                margin: 50px;
+            }
+        }
+    </style>
+
+
+</head>
+
+
+<body class="back-image">
+
+    <section class="container">
+        <section class="row justify-content-center">
+            <div class="col-lg-3">
+
+            </div>
+            <div class="img-resp col-lg-6 col-sm-12 p-3">
+                <div style="margin:40px 100px;" class="logini p-4">
+
+
+                    {% block content %}
+
+
+                    {% endblock content %}
+                </div>
+            </div>
+            <div class="col-lg-3">
+
+            </div>
+        </section>
+    </section>
+
+</body>
+
+</html>

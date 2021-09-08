@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html>
+
+
+<body>
+    {% block content %}
+    {% load crispy_forms_tags %}
+
+    <center><br>
+        <h2 class="text-warning p-3 m-0">IDENTITY CARD GENERATOR</h2>
+    </center>
+
+    <div class="row">
+
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-6 col-xl-6">
+            <div style="border-radius:20px;border:2px dotted red;width:95%;height:420px;margin-top:40px;position:relative;left:10px;" class="requirements">
+
+                <center><br>
+                    <h1 style="border-bottom:2px dotted red;border-radius:5px;" class="text-danger">INSTRUCTIONS</h1>
+                </center>
+                <div style="position:relative;left:20px;" class="list p-4">
+                    <li class="text-light">Name should be full-name. <label class="text-danger">(SURENDRA.SRIKAKOLAPU)</label></li><br>
+                    <li class="text-light">Surname not required for Father's Name</li><br>
+                    <li class="text-light">Date of birth should be in this format <label class="text-danger">(yyyy/mm/dd)</label>.</li><br>
+                    <li class="text-light">Student photo should be clear with full face <label class="text-danger">(2 inch x 2 inch)</label> .</li><br>
+                    <li style="list-style:none;">
+                        <center>
+                            <a href="/ad/detail/32/" class="btn btn-warning mb-0">Sample Identity Card <i style="color:red" class="fa fa-x fa-hand-o-left"></i></a>
+                        </center>
+                    </li>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="margin-top:20px;" class="col-md-6 col-lg-12 col-sm-12 col-xs-12 col-xl-6">
+            <form class="text-uppercase text-light p-2" method="POST" enctype="multipart/form-data">
+
+                <div class="form-row">
+                    <div class="form-group col-md-6 mb-0">
+                        {{form.studentname|as_crispy_field}}
+                    </div>
+                    <div class="form-group col-md-6 mb-0">
+                        {{form.fathername|as_crispy_field}}<br>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6 mb-0">
+                        {{form.reg_no|as_crispy_field}}
+                    </div>
+                    <div class="form-group col-md-6 mb-0">
+                        {{form.classname|as_crispy_field}}<br>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6 mb-0">
+                        {{form.dob|as_crispy_field}}
+                    </div>
+                    <div class="form-group col-md-6 mb-0">
+                        {{form.bloodgroup|as_crispy_field}}<br>
+                    </div>
+                </div>
+
+
+
+                {{form.resident_add|as_crispy_field}}
+                {{form.permanent_add|as_crispy_field}}
+                {{form.image|as_crispy_field}}
+
+                <br>
+                <input class="btn btn-block btn-danger btn-lg mb-4" type="submit" name="" value="Generate">
+                {% csrf_token %}
+            </form>
+        </div>
+
+    </div>
+
+    {% endblock content %}
+</body>
+
+</html>
